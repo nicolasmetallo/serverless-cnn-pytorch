@@ -24,6 +24,17 @@ Now open `train_deploy_pytorch_serverless.ipynb` in Google Colab and follow the 
 
 Google provides a free [NVIDIA T4](https://www.nvidia.com/en-gb/data-center/tesla-t4/) when you run Colab for up to 12 hours (it's not completely regular) so remember to have the Notebook set-up to use it. Go to **Edit** > **Notebook settings** > **Hardware accelerator** > **GPU**.
 
-Once you have downloaded `model.tar.gz` to your local filesystem you need to upload it to **AWS S3**. Follow the steps in my other repo: <https://github.com/nicolasmetallo/serverless-ssd300-vgg> to upload files, package, build, and deploy your function.
+Once you have downloaded `model.tar.gz` to your local filesystem you need to upload it to **AWS S3**. Follow the steps in my other repo: <https://github.com/nicolasmetallo/serverless-ssd300-vgg> to upload files, package, build, and deploy your function. You don't actually need to build before you deploy as we are not using any dependency outside of the Lambda ARN we specified in `template.yaml`.
+
+Once you have finished deploying your function, you should see something like this:
+```
+---------------------------------------------------------------------------------------------
+|                                      DescribeStacks                                       |
++-------------+-----------------------------------------------------------------------------+
+|  Description|  API Gateway endpoint URL for Prod stage for PyTorch function               |
+|  OutputKey  |  PyTorchApi                                                                 |
+|  OutputValue|  https://53f8w4fcua.execute-api.us-east-1.amazonaws.com/Prod/invocations/   |
++-------------+-----------------------------------------------------------------------------+
+```
 
 At the end, use the `test.ipynb` notebook to run queries against your new Lambda function.
