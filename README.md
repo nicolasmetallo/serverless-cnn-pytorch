@@ -33,7 +33,7 @@ Once you have finished deploying your function, you should see something like th
 +-------------+-----------------------------------------------------------------------------+
 |  Description|  API Gateway endpoint URL for Prod stage for PyTorch function               |
 |  OutputKey  |  PyTorchApi                                                                 |
-|  OutputValue|  https://53f8w4fcua.execute-api.us-east-1.amazonaws.com/Prod/invocations/   |
+|  OutputValue|  https://9xxft46ddb.execute-api.us-east-1.amazonaws.com/Prod/invocations/   |
 +-------------+-----------------------------------------------------------------------------+
 ```
 
